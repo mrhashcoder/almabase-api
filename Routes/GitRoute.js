@@ -6,7 +6,7 @@ const gitController = require('../Controller/GitController');
 
 
 // setting Router
-router.get("/git" , gitController.gitControl);
+router.post("/git" , gitController.gitControl);
 
 
 
