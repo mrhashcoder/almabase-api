@@ -12,6 +12,9 @@ module.exports = async(orgname, repoList , m , n) => {
     result = [];
     for(var i = 0; i < n ; i++){
         var response = await httpRequest(url[i]);
+        response.sort((a,b) => {
+            return b["contributions"] - a["contributions"];
+        });
         repo = {};
         contributers = [];
         for(var j = 0 ; j < Math.min(m , response.length) ; j++){
